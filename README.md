@@ -13,15 +13,16 @@ cat Cond1.bed Cond2.bed Cond3.bed | sort -k1,1  -k2,2n | bedtools merge -i - > U
 
 4. Use either featureCounts or bedtools coverage to get RC
 
-Manual for bedtools coverage https://bedtools.readthedocs.io/en/latest/content/tools/coverage.html
+Manual for bedtools coverage https://bedtools.readthedocs.io/en/latest/content/tools/coverage.html 
+
 Manual for featureCounts http://subread.sourceforge.net/featureCounts.html
 
 If using bedtools coverage, you need to run sample by sample and then merge them based on peakID
 
-_bedtools coverage -counts -a Union_Peak.bed -b Sample1.clean.bam > RawRC_Sample1.txt
-_
+bedtools coverage -counts -a Union_Peak.bed -b Sample1.clean.bam > RawRC_Sample1.txt
+
+
 If using featureCounts, you can run all samples together, but need to reformat *bed to a *saf format
-_featureCounts -p -a Union_peak.saf -F SAF -o RawRC_eatureCounts.txt BAM/*clean.bam
-_
+featureCounts -p -a Union_peak.saf -F SAF -o RawRC_eatureCounts.txt BAM/*clean.bam
 
 5. Then do any downstream analysis based on this RC files. (edited) 
