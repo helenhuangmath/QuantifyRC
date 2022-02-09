@@ -4,9 +4,9 @@
 
 1. Macs2 call peaks for each sample
 
-2. Use R package ChIPpeakAnno findOverlapsofPeaks() function to find overlapped peaks across replicates within each condition, use reproduced peak as conditional peak, for example
+2. Use `R package ChIPpeakAnno findOverlapsofPeaks()` function to find overlapped peaks across replicates within each condition, use reproduced peak as conditional peak, for example
     
-Cond1.bed which have at least 3 columns Chr Start End
+Cond1.bed with at least 3 columns Chr Start End
 
 3.  Merge reproduced conditional peaks into a union peak as final list, you can simplify use
 
