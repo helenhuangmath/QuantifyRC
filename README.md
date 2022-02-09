@@ -1,5 +1,6 @@
 # Quantify Read Counts
-Steps for quantifying read counts
+
+### Steps for quantifying read counts
 
 1. Macs2 call peaks for each sample
 
@@ -34,4 +35,4 @@ featureCounts -p -a Union_peak.saf -F SAF -o RawRC_eatureCounts.txt BAM/*clean.b
 ```
 
 
-5. Then do any downstream analysis based on this RC files. (edited) 
+5. Then do any downstream analysis based on this RC files.
