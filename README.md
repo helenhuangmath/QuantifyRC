@@ -19,12 +19,13 @@ Manual for featureCounts http://subread.sourceforge.net/featureCounts.html
 
 If using bedtools coverage, you need to run sample by sample and then merge them based on peakID
 
-**bedtools coverage -counts -a Union_Peak.bed -b Sample1.clean.bam > RawRC_Sample1.txt
-**
+bedtools coverage -counts -a Union_Peak.bed -b Sample1.clean.bam > RawRC_Sample1.txt
+
 If using featureCounts, you can run all samples together, but need to reformat *bed to a *saf format
 
-**awk 'OFS="\t" {print $5,$1,$2,$3,"."}' Union_peak.bed | sed '1 i GeneID\tChr\tStart\tEnd\tStrand' > Union_peak.saf
+awk 'OFS="\t" {print $5,$1,$2,$3,"."}' Union_peak.bed | sed '1 i GeneID\tChr\tStart\tEnd\tStrand' > Union_peak.saf
 
 featureCounts -p -a Union_peak.saf -F SAF -o RawRC_eatureCounts.txt BAM/*clean.bam
-**
+
+
 5. Then do any downstream analysis based on this RC files. (edited) 
